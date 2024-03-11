@@ -72,6 +72,7 @@ Using PolyglotIt is incredibly simple. Just follow these steps:
    Or, for a JavaScript example:
 
    ```javascript
+   #! /usr/
    // polyglot: requires axios
    const axios = require('axios');
 
@@ -95,20 +96,29 @@ PolyglotIt will automatically resolve the specified dependencies, set up the nec
 
 ## Supported Languages
 
-PolyglotIt supports a wide range of programming languages, including:
+PolyglotIt supports a wide range of programming languages. The scaffolded build systems to abstract away the
+build process are shown here.
 
-  - Python
-  - Node
-  - Javascript
-  - Typescript
-  - Rust
-  - Go
-  - Cpp
-  - C
-  - C#
-  - Java
-
-For a complete list of supported languages and their respective dependency comment syntax, please refer to the [PolyglotIt documentation](https://polyglotit.com/docs).
+| Language   | Formatter            | Linting          | Testing         | Building              | Running     | Complete |
+|------------|----------------------|------------------|-----------------|-----------------------|-------------|----------|
+| Python     | black                | pylint           | pytest          | -                     | python      | NO       |
+| Node       | Prettier             | ESLint           | Jest            | -                     | node        | NO       |
+| Java       | google-java-format   | CheckStyle       | JUnit           | Maven                 | java        | NO       |
+| C++        | clang-format         | clang-tidy       | GoogleTest      | CMake                 | ./a.out     | NO       |
+| C#         | dotnet format        | StyleCop         | NUnit           | MSBuild               | dotnet      | NO       |
+| Ruby       | rufo                 | RuboCop          | RSpec           | -                     | ruby        | NO       |
+| Go         | gofmt                | golint           | go test         | go build              | go run      | NO       |
+| PHP        | php-cs-fixer         | PHP_CodeSniffer  | PHPUnit         | -                     | php         | NO       |
+| TypeScript | Prettier             | ESLint           | jest            | bun                   | bun run     | NO       |
+| Swift      | swift-format         | SwiftLint        | XCTest          | Swift Package Manager | swift run   | NO       |
+| Rust       | rustfmt              | clippy           | cargo test      | cargo build           | cargo run   | NO       |
+| Kotlin     | ktlint               | ktlint           | Kotest          | Gradle/Kotlin Script  | kotlin      | NO       |
+| Scala      | scalafmt             | scalastyle       | ScalaTest       | sbt                   | scala       | NO       |
+| Dart       | dart format          | dart analyze     | dart test       | dart compile          | dart run    | NO       |
+| Haskell    | hindent/stylish-haskell | hlint          | Hspec           | stack build           | stack run   | NO       |
+| Lua        | lua-fmt              | luacheck         | busted          | -                     | lua         | NO       |
+| Elixir     | mix format           | Credo            | ExUnit          | mix                   | mix run     | NO       |
+  
 
 ## Contributing
 
